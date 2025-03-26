@@ -46,10 +46,10 @@ Route::prefix('admin')->group(function () {
     
 });
 
-Route::get('/sumar/{num1}/{num2}', [OperacionesController::class, 'sumar']);
+Route::get('/sumar/{num1}/{num2}', [OperacionesController::class, 'sumar'])->where(['num1' => '[0-9]+', 'num2' => '[0-9]+']);
 
-Route::get('/restar/{num1}/{num2}', [OperacionesController::class, 'restar']);
+Route::get('/restar/{num1}/{num2}', [OperacionesController::class, 'restar'])->where(['num1' => '[0-9]+', 'num2' => '[0-9]+']);
 
-Route::get('/multiplicar/{num1}/{num2}', [OperacionesController::class, 'multiplicar']);
+Route::get('/multiplicar/{num1}/{num2}', [OperacionesController::class, 'multiplicar'])->where(['num1' => '[0-9]+', 'num2' => '[0-9]+']);
 
-Route::get('/dividir/{num1}/{num2}', [OperacionesController::class, 'dividir']);
+Route::get('/dividir/{num1}/{num2}', [OperacionesController::class, 'dividir'])->where(['num1' => '[0-9]+', 'num2' => '[0-9]+']);
