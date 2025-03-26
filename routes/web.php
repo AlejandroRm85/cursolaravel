@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\OperacionesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,3 +45,11 @@ Route::prefix('admin')->group(function () {
     });
     
 });
+
+Route::get('/sumar/{num1}/{num2}', [OperacionesController::class, 'sumar']);
+
+Route::get('/restar/{num1}/{num2}', [OperacionesController::class, 'restar']);
+
+Route::get('/multiplicar/{num1}/{num2}', [OperacionesController::class, 'multiplicar']);
+
+Route::get('/dividir/{num1}/{num2}', [OperacionesController::class, 'dividir']);
